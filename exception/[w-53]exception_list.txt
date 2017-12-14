@@ -1,0 +1,16 @@
+User_Feed_Synchronization-{57E4B44D-C865-4A96-892C-3CBAD4367D74}
+USER_ESRV_SVC_QUEENCREEK
+Adobe Acrobat Update Task
+Adobe Flash Player PPAPI Notifier
+Adobe Flash Player Updater
+GoogleUpdateTaskMachineCore
+GoogleUpdateTaskMachineUA
+NvDriverUpdateCheckDaily_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+NvNodeLauncher_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+NvProfileUpdaterDaily_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+NvProfileUpdaterOnLogon_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+NvTmMon_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+NvTmRep_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+NvTmRepOnLogon_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+OneDrive Standalone Update Task v2
+RunAsStdUser Task

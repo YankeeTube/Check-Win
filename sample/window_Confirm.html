@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!--        <meta http-equiv="refresh" content="3">-->
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="window_result.css">
+        <script src='window_result.js' type='text/javascript'></script>
+        <script src='jquery-1.12.4.min.js' type='text/javascript'></script>
+        
+        
+        
+    </head>
+    <body>
+        <div class='filter'>
+            <select id='filter' onchange="javascript:filtering(this.value)">
+                <option value="show">Show All</option>
+                <option value="양호">양호</option>
+                <option value="취약">취약</option>
+                <option value="수동">수동</option>
+                <option value="비 정 상">비 정 상</option>
+                <option value="측정불가">측정불가</option>
+            </select>
+        </div>
+        <table border='1' id='result_table'>
+<!--            <caption>Windows 취약점 진단 결과</caption>-->
+            <thead>
+<!--                제목-->
+                <tr>
+                    <th scope='col' colspan='3' class='line1_1'>구분</th>
+                    <th scope='col' colspan="2" class='line1_2'>내용</th>
+                </tr>
+                <tr>
+                    <th class='line2_1 line2_same'>분류</th>
+                    <th class='line2_2 line2_same'>항목코드</th>
+                    <th class='line2_3 line2_same'>점검항목</th>
+                    <th class='line2_4'>점검결과</th>
+                    <th class='line2_5'>상태</th>
+                </tr>
+                
+                
+<!--                제목 끝-->
+				<tr id='service1'>
+					<td rowspan='18' class='kind1'>계정 관리</td>
+					<td class='wcode'>W-01</td>
+					<td class='item'>Administrator 계정 이름 바꾸기</td>
+					<td class='result_text'>[W-01] Administrator 계정 이름 바꾸기 : Administrator 계정 존재</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-02</td>
+					<td class='item'>Guest 계정 상태</td>
+					<td class='result_text'>[W-02] Guest 계정 상태 : No [사용 안 함]</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-03</td>
+					<td class='item'>불필요한 계정 제거</td>
+					<td class='result_text'>[W-03] 불필요한 계정 : Administrator, DefaultAccount, Guest, Steven, WDAGUtilityAccount</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-04</td>
+					<td class='item'>계정 잠금 임계값 설정</td>
+					<td class='result_text'>[W-04] 계정 잠금 임계값 : Never [계정 미 잠금]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-05</td>
+					<td class='item'>해독 가능한 암호화를 사용하여 암호 저장</td>
+					<td class='result_text'>[W-05] 해독 가능한 암호화를 사용하여 암호 저장 : 사용</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-06</td>
+					<td class='item'>관리자 그룹에 최소한의 사용자 포함</td>
+					<td class='result_text'>[W-06] 관리자 그룹에 최소한의 사용자 포함 : Steven</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-07</td>
+					<td class='item'>Everyone 사용 권한을 익명 사용자에게 적용</td>
+					<td class='result_text'>[W-07] Everyone 사용 권한을 익명 사용자에게 적용 :  [사용 안 함]</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-08</td>
+					<td class='item'>계정 잠금 기간 설정</td>
+					<td class='result_text'>[W-08] 계정 잠금 기간 설정
+계정 잠금 기간 [분] : 30분 잠금 설정 사용 중
+계정 잠금 기간 원래대로 설정 기간 [분] : 30분 잠금 설정 사용 중</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-09</td>
+					<td class='item'>패스워드 복잡성 설정</td>
+					<td class='result_text'>[W-09] 패스워드 복잡성 설정 : [사용 안 함]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-10</td>
+					<td class='item'>패스워드 최소 암호 길이</td>
+					<td class='result_text'>[W-10] 패스워드 최소 암호 길이 : 0 자리 미만 사용</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-11</td>
+					<td class='item'>패스워드 최대 사용 기간</td>
+					<td class='result_text'>[W-11] 패스워드 최대 사용 기간 : 42일 [권장사항 만족]</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-12</td>
+					<td class='item'>패스워드 최소 사용 기간 </td>
+					<td class='result_text'>[W-12] 패스워드 최소 사용 기간 : 0일 [권장사항 불 만족]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-13</td>
+					<td class='item'>마지막 사용자 이름 표시 안함</td>
+					<td class='result_text'>[W-13] 마지막 사용자 이름 표시 안 함 : 0 [사용 안 함]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-14</td>
+					<td class='item'>로컬 로그온 허용</td>
+					<td class='result_text'>[W-14] 로컬 로그온 허용 : 
+__vmware__
+Guest
+*S-1-5-32-545
+*S-1-5-32-551
+*S-1-5-32-581
+*S-1-5-90-0</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-15</td>
+					<td class='item'>익명 SID/이름 변환 허용</td>
+					<td class='result_text'>[W-15] 익명 SID/이름 변환 허용 : [허용 안 함]</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-16</td>
+					<td class='item'>최근 암호 기억</td>
+					<td class='result_text'>[W-16] 최근 암호 기억 : 설정 값 없음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-17</td>
+					<td class='item'>콘솔 로그온 시 로컬 계정에서 빈 암호 사용 제한</td>
+					<td class='result_text'>[W-17] 콘솔 로그온 시 로컬 계정에서 빈 암호 사용 제한 : [사용]</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-18</td>
+					<td class='item'>원격터미널 접속 가능한 사용자 그룹 제한</td>
+					<td class='result_text'>[W-18] 원격터미널 접속 가능한 사용자 그룹 제한 : 제한 등록된 사용자 및 그룹이 존재하지 않습니다.</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr id='service2'>
+					<td rowspan='36' class='kind2'>서비스
+관리</td>
+					<td class='wcode'>W-19</td>
+					<td class='item'>공유 권한 및 사용자 그룹 설정</td>
+					<td class='result_text'>[W-19] 공유 권한 및 사용자 그룹 설정 : 
+--------------------------------------------------
+Share name        Users
+Permission        BUILTIN\Administrators, FULL
+---------------------------------------------------------------------------
+Share name        C$
+Permission        Everyone, FULL
+---------------------------------------------------------------------------
+Share name        IPC$
+Permission        Everyone, FULL
+---------------------------------------------------------------------------
+Share name        Users
+Permission        BUILTIN\Administrators, FULL
+-------------------------</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-20</td>
+					<td class='item'>하드디스크 기본 공유 제거</td>
+					<td class='result_text'>[W-20] 하드디스크 기본 공유 제거 : 레지스트리 설정이 없거나 기본 공유폴더를 사용중입니다.</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-21</td>
+					<td class='item'>불필요한 서비스 제거</td>
+					<td class='result_text'>[W-21] 불 필요한 서비스 제거 : 없음</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-22</td>
+					<td class='item'>IIS 서비스 구동 점검</td>
+					<td class='result_text'>[W-22] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-23</td>
+					<td class='item'>IIS 디렉토리 리스팅 제거</td>
+					<td class='result_text'>[W-23] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-24</td>
+					<td class='item'>IIS CGI 실행 제한</td>
+					<td class='result_text'>[W-24] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-25</td>
+					<td class='item'>IIS 상위 디렉토리 접근 금지</td>
+					<td class='result_text'>[W-25] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-26</td>
+					<td class='item'>IIS 불필요한 파일 제거</td>
+					<td class='result_text'>[W-26] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-27</td>
+					<td class='item'>IIS 웹 프로세스 권한 제한</td>
+					<td class='result_text'>[W-27] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-28</td>
+					<td class='item'>IIS 링크 사용금지</td>
+					<td class='result_text'>[W-28] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-29</td>
+					<td class='item'>IIS 파일 업로드 및 다운로드 제한</td>
+					<td class='result_text'>[W-29] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-30</td>
+					<td class='item'>IIS DB 연결 취약점 점검</td>
+					<td class='result_text'>[W-30] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-31</td>
+					<td class='item'>IIS 가상 디렉토리 삭제</td>
+					<td class='result_text'>[W-31] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-32</td>
+					<td class='item'>IIS 데이터 파일 ACL 적용</td>
+					<td class='result_text'>[W-32] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-33</td>
+					<td class='item'>IIS 미사용 스크립트 매핑 제거</td>
+					<td class='result_text'>[W-33] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-34</td>
+					<td class='item'>IIS Exec 명령어 쉘 호출 진단</td>
+					<td class='result_text'>[W-34] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-35</td>
+					<td class='item'>IIS WebDAV 비활성화</td>
+					<td class='result_text'>[W-35] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-36</td>
+					<td class='item'>NetBIOS 바인딩 서비스 구동 점검</td>
+					<td class='result_text'>[W-36] NetBIOS 바인딩 서비스 구동 점검 : 0[기본값]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-37</td>
+					<td class='item'>FTP 서비스 구동 점검</td>
+					<td class='result_text'>[W-37] FTP Service를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-38</td>
+					<td class='item'>FTP 디렉토리 접근권한 설정</td>
+					<td class='result_text'>[W-38] FTP Service를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-39</td>
+					<td class='item'>Anonymouse FTP 금지</td>
+					<td class='result_text'>[W-39] FTP Service를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-40</td>
+					<td class='item'>FTP 접근 제어 설정</td>
+					<td class='result_text'>[W-40] FTP Service를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-41</td>
+					<td class='item'>DNS Zone Transfer 설정</td>
+					<td class='result_text'>[W-41] DNS Zone Transfer 설정 : DNS 사용 안 함</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-42</td>
+					<td class='item'>RDS(RemoteDataServices)제거 </td>
+					<td class='result_text'>[W-42] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-43</td>
+					<td class='item'>최신 서비스팩 적용</td>
+					<td class='result_text'>[W-43] 최신 서비스팩 적용 : 
+OS 버전 : Windows 10.0.16299
+최신 빌드는 : [Build KB 4048955] 입니다.
+현재 사용중인 OS 버전은 최신 Service Pack 입니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-44</td>
+					<td class='item'>터미널 서비스 암호화 수준 설정</td>
+					<td class='result_text'>[W-44] : 터미널 서비스 암호화 수준 설정 : 사용 안 함</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-45</td>
+					<td class='item'>IIS 웹서비스 정보 숨김</td>
+					<td class='result_text'>[W-45] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-46</td>
+					<td class='item'>SNMP 서비스 구동 점검</td>
+					<td class='result_text'>[W-46] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-47</td>
+					<td class='item'>SNMP 서비스 커뮤니티스트링의 복잡성 설정</td>
+					<td class='result_text'>[W-47] SNMP 서비스 커뮤니티 스트링의 복잡성 설정 : public [읽기 이상의 권한]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-48</td>
+					<td class='item'>SNMP Access control 설정</td>
+					<td class='result_text'>[W-48] SNMP Access Control 설정 : localhost 혹은 모든 호스트 허용</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-49</td>
+					<td class='item'>DNS 서비스 구동 점검</td>
+					<td class='result_text'>[W-49] : DNS 서비스 구동 점검 : 파일이 존재하지 않음</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-50</td>
+					<td class='item'>HTTP/FTP/SMTP 배너 차단</td>
+					<td class='result_text'>[W-50] IIS Server를 사용하고 있지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-51</td>
+					<td class='item'>Telnet 보안 설정</td>
+					<td class='result_text'>[W-51] : Telnet 보안 설정 : Windows10은 Telnet Service를 제공하지 않습니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-52</td>
+					<td class='item'>불필요한 ODBC/OLE-DB 데이터 소스와 드라이브 제거</td>
+					<td class='result_text'>[W-52] 불 필요한 ODBC/OLE-DB 데이터 소스와 드라이브 제거 : 사용 안 함</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-53</td>
+					<td class='item'>원격터미널 접속 타임아웃 설정</td>
+					<td class='result_text'>[W-53] 원격 터미널 접속 타임아웃 설정 : 구성되지 않음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-54</td>
+					<td class='item'>예약된 작업에 의심스러운 명령이 등록되어 있는지 점검</td>
+					<td class='result_text'>[W-54] 예약된 작업에 의심스러운 명령이 등록되어 있는지 점검 : 
+AdobeAAMUpdater-1.0-DESKTOP-4VCCEDU-Steven
+AutoKMS
+btrust 퇴근
+NVIDIA GeForce Experience SelfUpdate_{B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}
+oCamTask
+OneDrive Standalone Update Task-S-1-5-21-3507750668-3966935126-1225186884-1001
+Overwolf Updater Task
+User_Feed_Synchronization-{94206F9D-1399-46AA-8172-F661D6734F56}
+</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr id='service3'>
+					<td rowspan='3' class='kind3'>패치 관리</td>
+					<td class='wcode'>W-55</td>
+					<td class='item'>최신 HOT FIX 적용</td>
+					<td class='result_text'>[W-55] 최신 HOT FIX 적용 : [4009469] 업데이트 누락</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-56</td>
+					<td class='item'>백신 프로그램 업데이트</td>
+					<td class='result_text'>[W-56] 백신 프로그램 업데이트 : [Windows Defender Version] = 1.1.14405.2[수동비교 권장]</td>
+					<td class='result_status'style='background-color:#FFFFFF';>수동</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-57</td>
+					<td class='item'>정책에 따른 시스템 로깅 설정</td>
+					<td class='result_text'>[W-57] 정책에 따른 시스템 로깅 설정 : 
+로그온 이벤트 : 0
+계정 로그온 이벤트 : 0
+정책 변경 : 0
+계정 관리 : 0
+디렉터리 액세스 : 0
+권한 사용 : 0</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr id='service4'>
+					<td rowspan='4' class='kind4'>로그 관리</td>
+					<td class='wcode'>W-58</td>
+					<td class='item'>로그의 정기적 검토 및 보고</td>
+					<td class='result_text'>[W-58] 로그의 정기적 검토 및 보고 : 수동</td>
+					<td class='result_status'style='background-color:#FFFFFF';>수동</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-59</td>
+					<td class='item'>원격으로 액세스할 수 있는 레지스트리 경로</td>
+					<td class='result_text'>[W-59] 원격으로 액세스 할 수 있는 레지스트리 경로 : 없음</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-60</td>
+					<td class='item'>이벤트 로그 관리 설정</td>
+					<td class='result_text'>[W-60] 이벤트 로그 관리 설정 : 
+Application Log 최대 크기 : 20971520
+Security Log 최대 크기 : 20971520
+System Log 최대 크기 : 20971520
+Application 0 일 이후 자동 덮어쓰기 설정
+Security 0 일 이후 자동 덮어쓰기 설정
+System 0 일 이후 자동 덮어쓰기 설정</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-61</td>
+					<td class='item'>원격에서 이벤트 로그 파일 접근 차단</td>
+					<td class='result_text'>[W-61] 원격에서 이벤트 로그 파일 접근 차단 : Log Directory의 Everyone 권한 없음</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr id='service5'>
+					<td rowspan='20' class='kind5'>보안 관리</td>
+					<td class='wcode'>W-62</td>
+					<td class='item'>백신 프로그램 설치</td>
+					<td class='result_text'>[W-62] 백신 프로그램 설치 : Windows Defender 동작 안 함</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-63</td>
+					<td class='item'>SAM 파일 접근 통제 설정</td>
+					<td class='result_text'>[W-63] SAM 파일 접근 통제 설정: 없음</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-64</td>
+					<td class='item'>화면보호기 설정 </td>
+					<td class='result_text'>[W-64] 화면 보호기 설정 : 
+화면 보호기 활성 : True
+화면 보호기 시간 제한 : 0
+화면 보호기 해제 시 로그온 유무 : True</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-65</td>
+					<td class='item'>로그온하지 않고 시스템 종료 허용</td>
+					<td class='result_text'>[W-65] 로그온 하지 않고 시스템 종료 허용 : 허용</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-66</td>
+					<td class='item'>원격 시스템에서 강제로 시스템 종료</td>
+					<td class='result_text'>[W-66] 원격 시스템 강제로 시스템 종료 : Administrators</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-67</td>
+					<td class='item'>보안 감사를 로그할 수 없는 경우 즉시 시스템 종료</td>
+					<td class='result_text'>[W-67] 보안 감사를 로그할 수 없는 경우 즉시 시스템 종료 : 즉시종료 안 함</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-68</td>
+					<td class='item'>SAM 계정과 공유의 익명 열거 허용 안 함</td>
+					<td class='result_text'>[W-68] SAM 계정과 공유의 익명 열거 허용 안함 : 허용</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-69</td>
+					<td class='item'>Autologon 기능 제어</td>
+					<td class='result_text'>[W-69] AutoLogon 기능 제어 : 사용 안 함</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-70</td>
+					<td class='item'>이동식 미디어 포맷 및 꺼내기 허용</td>
+					<td class='result_text'>[W-70] 이동식 미디어 포맷 및 꺼내기 허용 : 설정 값 없음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-71</td>
+					<td class='item'>디스크볼륨 암호화 설정</td>
+					<td class='result_text'>[W-71] 디스크 볼륨 암호화 설정 : 검사대상의 양이 방대하여 검사 불가</td>
+					<td class='result_status'style='background-color:#FFFFFF';>측정불가</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-72</td>
+					<td class='item'>Dos공격 방어 레지스트리 설정</td>
+					<td class='result_text'>[W-72] Dos공격 방어 레지스트리 설정 : Windows 10.0.16299 은 안전한 Version 입니다.</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-73</td>
+					<td class='item'>사용자가 프린터 드라이버를 설치할 수 없게 함</td>
+					<td class='result_text'>[W-73] 사용자가 프린터 드라이버를 설치할 수 없게 함 : 설정 값 없음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-74</td>
+					<td class='item'>세션 연결을 중단하기 전에 필요한 유휴시간</td>
+					<td class='result_text'>[W-74] 세션 연결을 중단하기 전에 필요한 유휴 시간 : 설정 값 없음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-75</td>
+					<td class='item'>경고 메시지 설정</td>
+					<td class='result_text'>[W-75] 경고 메시지 설정 : 없음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-76</td>
+					<td class='item'>사용자별 홈 디렉터리 권한 설정</td>
+					<td class='result_text'>[W-76] 사용자 별 홈 디렉터리 권한 설정 : Everyone 권한 없음</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-77</td>
+					<td class='item'>LAN Manager 인증 수준</td>
+					<td class='result_text'>[W-77] LAN Manager 인증 수준 : 설정 값 없음</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-78</td>
+					<td class='item'>보안 채널 데이터 디지털 암호화 또는 서명</td>
+					<td class='result_text'>[W-78] 보안 채널 데이터 디지털 암호화 또는 서명 : 
+도메인 구성원 : 보안 채널 데이터를 디지털 서명(가능한 경우) [사용 함]
+도메인 구성원 : 보안 채널 데이터를 디지털 암호화 또는 서명(항상) [사용]
+도메인 구성원 : 보안 채널 데이터를 디지털 암호화(가능한 경우) [사용 함]</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-79</td>
+					<td class='item'>파일 및 디렉토리 보호</td>
+					<td class='result_text'>[W-79] 파일 및 디렉터리 보호 : 
+File System : NTFS</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-80</td>
+					<td class='item'>컴퓨터 계정 암호 최대 사용 기간</td>
+					<td class='result_text'>[W-80] 컴퓨터 계정 암호 최대 사용 기간 : 3일
+컴퓨터 계정 암호 변경 사용 안 함 : 사용 함</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr>
+					<td class='wcode'>W-81</td>
+					<td class='item'>시작프로그램 목록 분석</td>
+					<td class='result_text'>[W-81] 시작 프로그램 목록 분석 : desktop.ini, SecurityHealth, wizvera-veraport-x64, AdobeAAMUpdater-1.0, RTHDVCPL, SoftEther VPN Client UI Helper, ShadowPlay, Launch LCore</td>
+					<td class='result_status'style='background-color:red';>취약</td>
+				</tr>
+				<tr id='service6'>
+					<td rowspan='1' class='kind6'>DB 관리</td>
+					<td class='wcode'>W-82</td>
+					<td class='item'>Windows 인증 모드 사용</td>
+					<td class='result_text'>[W-82] Windows 인증 모드 사용 : MS SQL Server를 사용하고 있지 않습니다. 
+(설정 값 없음)</td>
+					<td class='result_status'style='background-color:aqua';>양호</td>
+				</tr>
+
+            </thead>
+        </table>
+    </body>
+</html>

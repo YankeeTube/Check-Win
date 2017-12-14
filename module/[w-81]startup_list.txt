@@ -1,0 +1,5 @@
+WindowsDefender
+AdobeAAMUpdater-1.0
+AhnLab Safe Transaction Application
+ShadowPlay
+RTHDVCPL

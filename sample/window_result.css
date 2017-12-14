@@ -1,0 +1,198 @@
+body,html{
+    width:90vw;
+    height:80vh;
+    margin: 0px;
+    padding:0px;
+}
+table{
+    margin-left:5vw;
+    width:90vw;
+    height:80vh;
+    border-collapse: collapse;
+/*    border-style: none;*/
+}
+table td{
+    text-align: center;
+}
+.line1_1{
+/*    구분*/
+    width:36vw;
+    background-color:#8497B0;
+}
+.line1_2{
+/*    내용*/
+    width:54vw;
+    background-color:#FFE699;
+}
+
+/* 분류 항목코드 점검항목 점검결과 상태 */
+/*2번째 라인 공통항목*/
+.line2_same{
+    text-align: center;
+    background-color:#00B050;
+}
+/*분류*/
+.line2_1{
+    width:6vw;
+}
+
+/*항목코드*/
+.line2_2{
+    width:8vw;
+}
+
+/*점검항목*/
+.line2_3{
+    width:22vw;    
+}
+/*점검결과*/
+.line2_4{
+    width:46vw;
+    background-color:#F8CBAD;
+}
+
+/*상태*/
+.line2_5{
+    width:8vw;
+    background-color:#F8CBAD;
+}
+
+
+
+/*계정관리*/
+.kind1{
+    background-color:#EDEDED;
+    width:6vw;
+}
+.new_kind1{
+    background-color:#EDEDED;
+    width:6vw;
+}
+/*서비스관리*/
+.kind2{
+    background-color:#DBDBDB;
+    width:6vw;
+}
+.new_kind2{
+    background-color:#DBDBDB;
+    width:6vw;
+}
+/*패치관리*/
+.kind3{
+    background-color:#C9C9C9;
+    width:6vw;
+}
+.new_kind3{
+    background-color:#C9C9C9;
+    width:6vw;
+}
+/*로그관리*/
+.kind4{
+    background-color: #7B7B7B;
+    width:6vw;
+}
+.new_kind4{
+    background-color: #7B7B7B;
+    width:6vw;
+}
+/*보안관리*/
+.kind5{
+    background-color: #525252;
+    width:6vw;
+}
+.new_kind5{
+    background-color: #525252;
+    width:6vw;
+}
+/*DB관리*/
+.kind6{
+    background-color: #A5A5A5;
+    width:6vw;
+}
+.new_kind6{
+    background-color: #A5A5A5;
+    width:6vw;
+}
+.result_text{
+    width:46vw;
+    height:2vh;
+    font-size:11px;
+    text-align: left;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    word-wrap:break-word; 
+    word-break:break-all;
+    transition:all 0.8s, color 0.3s 0.3s;
+}
+.result_text:hover{
+    overflow-y:scroll;
+    text-overflow: clip;
+    white-space: pre-wrap;
+    height:20vh;
+    font-size:14px;
+    background-color:darkgray;
+    box-shadow:auto 0 0 0 rgba(0,0,0,0.5) inset;
+}
+.result_status{
+    width:8vw;
+    text-align: center;
+}
+
+.wcode{
+    width:6vw;
+    background-color:#B4C6E7;
+    font-size:14px;
+/*    float:left;*/
+    height: auto;
+/*    border-style: none;*/
+}
+
+.item{
+    width:24vw;
+    font-size:11px;
+    background-color:#8DA8DA;
+}
+
+.filter{
+    width:90vw;
+    height:5vh;
+    vertical-align: middle;
+    text-align: center;
+    border:1px solid black;
+    margin-left:5vw;
+}
+#filter{
+    width:90vw;
+    height: 5vh;
+    font-size:20px;
+    transition:all 1.8s, color 1.5s 1.5s;
+}
+#filter:hover{
+    background-color:aqua;
+    box-shadow:auto 0 0 0 rgba(0,0,0,0.5) inset;
+}
+
+.filter_same{
+    padding:0px;
+    margin:0px;
+    float:left;
+}
+.filter1{
+    width:6vw;
+}
+.filter2{
+    width:8vw;
+}
+.filter3{
+    width:24vw;
+}
+.filter4{
+    width:40vw;
+}
+.filter5{
+    width:14vw;
+}
+#filter1{
+    width:100%;
+    float:left;
+}

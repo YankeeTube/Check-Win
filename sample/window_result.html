@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!--        <meta http-equiv="refresh" content="3">-->
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="window_result.css">
+        <script src='window_result.js' type='text/javascript'></script>
+        <script src='jquery-1.12.4.min.js' type='text/javascript'></script>
+        
+        
+        
+    </head>
+    <body>
+        <div class='filter'>
+            <select id='filter' onchange="javascript:filtering(this.value)">
+                <option value="show">Show All</option>
+                <option value="양호">양호</option>
+                <option value="취약">취약</option>
+                <option value="수동">수동</option>
+                <option value="비 정 상">비 정 상</option>
+                <option value="측정불가">측정불가</option>
+            </select>
+        </div>
+        <table border='1' id='result_table'>
+<!--            <caption>Windows 취약점 진단 결과</caption>-->
+            <thead>
+<!--                제목-->
+                <tr>
+                    <th scope='col' colspan='3' class='line1_1'>구분</th>
+                    <th scope='col' colspan="2" class='line1_2'>내용</th>
+                </tr>
+                <tr>
+                    <th class='line2_1 line2_same'>분류</th>
+                    <th class='line2_2 line2_same'>항목코드</th>
+                    <th class='line2_3 line2_same'>점검항목</th>
+                    <th class='line2_4'>점검결과</th>
+                    <th class='line2_5'>상태</th>
+                </tr>
+                
+                
+<!--                제목 끝-->
+replace
+            </thead>
+        </table>
+    </body>
+</html>
